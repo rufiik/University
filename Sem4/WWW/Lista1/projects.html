@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projekty</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Moje Projekty</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Strona główna</a>
+                <li><a href="index.html#about">O mnie</a>
+                <li><a href="#projects">Projekty</a>
+                <li><a href="index.html#interests">Zainteresowania</a>
+                <li><a href="index.html#contact">Kontakt</a>
+            </ul>
+        </nav>
+    </header>
+    <main class="projekty">
+        <section id="projects">
+            <h2>Projekty</h2>
+            <article>
+                <h3>Chinese Checkers (JAVA)</h3>
+                <p>Projekt gry w chińskie warcaby na Kurs Programowania. Stworzone GUI planszy i wyboru rozgrywki. Zaimplementowana rozgrywka boty oraz zapis w bazie danych</p>
+            </article>
+            <article>
+                <h3>Interpreter Brainfucka (C++)</h3>
+                <p>Na zajęciach z Nokii stworzyłem interpreter do Brainfucka, który zawiera 8 instrukcji tylko. Sprawdziłem też kilkanaście testów przez co zrozumiałem jak ten język działa.</p>
+            </article>
+            <article>
+                <h3>Projekt z MPISU Bins and Balls (JAVA)</h3>
+                <p>Na zajęcia z Metod Probabilistyki i Statystyki stworzyłem symulacje wrzucania kulek do urn i sprawdziłem Birthday paradox, Coupon collector problem i coupon collector brother problem</p>
+            </article>
+        </section>
+        <section id="detailed-projects">
+            <h2>Szczegółowe Projekty</h2>
+            <article>
+                <h3>Strona coina RYUK (REACT)</h3>
+                <p>Stworzyłem frontend dla coina. Zrobiłem go ucząc się wtedy pierwszy raz używać
+                     reacta wraz z tailwindcss, który bardzo ułatwił mi korzystanie z arkuszy stylów.
+                      Cały projekt zajął mi koło tygodnia żeby przypomnieć sobie jak tworzy się strony
+                       potem nauczyć się jak zrobić to w reactcie i tailwindzie a na końcu poprawki. 
+                       Strona posiada działającą konsolę (tak samo jak działa np na linuxie), obraz po
+                        prawej automatycznie sie przyciemnia i przyjaśnia czasami też losowo zmienia
+                         wartość a po lewej jest ledowy napis</p>
+                         <p>Zdjęcie strony: </p>
+                <img src="public/strona.png" alt="zdjecie strony" class="strona">
+            </article>
+            <article>
+                <h3>Smocze Skarby (C++) <a href="public/smoczeskarby.pdf">pdf</a> </h3>
+                <p> Moim zadaniem było napisanie programu na konkursie CMI, który znajdzie współrzędne  jamy smoka (opis w pdf) na mapie, wykonując N kroków zgodnie z opisem w manuskrypcie.</p>
+                <p>Opis wejścia: W pierwszym wierszu znajduje się liczba T (1 ≤ T ≤ 100 000) oznaczająca liczbę przypadków testowych. Każdy z kolejnych T wierszy zawiera liczbę całkowitą N (0 ≤ N ≤ 10^18) – liczbę kroków do wykonania.</p>
+                <p>Opis wyjścia: Na wyjściu należy wypisać T wierszy, każdy zawierający współrzędne (x, y) smoczej jamy dla danego przypadku testowego.</p>
+                <p>Przykład:</p>
+                <pre><code>4
+            3
+            0
+            30
+            8</code></pre>
+                <p>Odpowiedź:</p>
+                <pre><code>1 0
+            0 0
+            -5 -3
+            2 -2</code></pre>
+            <p>Spektakularna część kodu</p>
+                <pre><code>void zwracaniedwojki(long long N, int xnew, int ynew) {
+                    if (N == 3) {
+                        dwojki.push_back(make_pair(xnew, ynew));
+                    } else {
+                        if (licznik3 == 4) {
+                            dwojki.push_back(make_pair(xnew, ynew));
+                        }
+                        long long x, y;
+                        x = 0 * (0 - xnew) - 1 * (0 - ynew) + xnew;
+                        y = 1 * (0 - xnew) + 0 * (0 - ynew) + ynew;
+                        dwojki.push_back(make_pair(x, y));
+                        licznik3 *= 2;
+                        if (licznik3 &lt; N) {
+                            zwracaniedwojki(N, x, y);
+                        }
+                    }
+                }</code></pre>
+            </article>
+            <article>
+                <h3>Projekt księgarni na bazy danych (JAVA, SQL, REACT, NEXT)</h3>
+                <p>Stworzyłem projekt księgarni internetowej na przedmiot Bazy Danych. Stworzyłem frontend w językach React i Nextjs. Bakend był napisany w języku Java przy użycia JPA było połączenie z bazą. Dodałem logowanie na starcie które wykorzystywało szyfrowanie bcrypt haseł, które były wrzucane do bazy a potem sprawdzane hasło było szyfrowane i sprawdzane czy się zgadza. Był user oraz admin oboje mieli inne uprawnienia w możliwości do wglądu w bazy czy usuwanie ich. Przykładowy kod usuwania książki w reactcie:</p>
+                <pre><code> const deleteBook = async (bookId) => {
+                    try {
+                      console.log(`Usuwanie książki o id: ${bookId}`);
+                      const response = await fetch(`http://localhost:8080/api/books/${bookId}`, {
+                        
+                        method: "DELETE",
+                      });
+                      if (!response.ok) {
+                        if (response.status === 500) {
+                          throw new Error('Nie można usunąć książki. Może być powiązana z innymi danymi.');
+                        } else {
+                          throw new Error(`HTTP error! status: ${response.status}`);
+                        }
+                      }
+                      setBooks((prev) => prev.filter((book) => book.id !== bookId));
+                    } catch (error) {
+                      console.error("Błąd podczas usuwania książki:", error);
+                      setErrorMessage('Nie można usunąć książki. Może być powiązana z innymi danymi.');
+                    }
+                  };</code></pre>
+            </article>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Moje Portfolio. Wszelkie prawa zastrzeżone.</p>
+    </footer>
+</body>
+</html>

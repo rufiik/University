@@ -1,0 +1,18 @@
+@startuml
+actor Bibliotekarz
+actor Czytelnik
+
+Bibliotekarz -> (Dodaj książkę)
+Bibliotekarz -> (Dodaj egzemplarz książki)
+Bibliotekarz -> (Dodaj czytelnika)
+Bibliotekarz -> (Wypożycz książkę)
+Bibliotekarz -> (Wyświetl książki)
+Bibliotekarz -> (Wyświetl czytelników)
+
+Czytelnik -> (Przeglądaj dostępne książki)
+Czytelnik -> (Oddaj książki)
+
+(Dodaj egzemplarz książki) .> (Dodaj książkę) : <<include>>
+(Wypożycz książkę) .> (Przeglądaj dostępne książki) : <<include>>
+
+@enduml

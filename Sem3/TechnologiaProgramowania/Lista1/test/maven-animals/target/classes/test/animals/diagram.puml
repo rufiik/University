@@ -1,0 +1,18 @@
+@startuml Animals
+class Animal {
+  -name : String
+  +getName() : String
+  +makeSound() : void
+}
+
+class Dog {
+  +makeSound() : void
+}
+
+class Cat {
+  +makeSound() : void
+}
+
+Animal <|-- Dog
+Animal <|-- Cat
+@enduml

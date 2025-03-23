@@ -1,0 +1,113 @@
+Opis przypadków użycia
+
+Poniżej rozpisano szczegółowe scenariusze dla każdego przypadku użycia.
+1. Dodaj książkę
+
+    Aktor: Bibliotekarz
+
+    Cel: Dodanie nowej książki do systemu (jeśli tytuł nie istnieje).
+
+    Scenariusz główny:
+        Bibliotekarz wybiera opcję „Dodaj książkę”.
+        System prosi o podanie tytułu książki.
+        Bibliotekarz wpisuje tytuł.
+        System sprawdza, czy książka o takim tytule już istnieje.
+        Jeśli książka nie istnieje, system dodaje książkę do bazy.
+        System wyświetla komunikat potwierdzający dodanie książki.
+
+    Scenariusz alternatywny:
+        5a. Jeśli książka o takim tytule już istnieje, system informuje bibliotekarza i przerywa operację.
+
+2. Dodaj egzemplarz książki
+
+    Aktor: Bibliotekarz
+
+    Cel: Dodanie egzemplarza do istniejącej książki.
+
+    Scenariusz główny:
+        Bibliotekarz wybiera opcję „Dodaj egzemplarz książki”.
+        System prosi o podanie tytułu książki.
+        Bibliotekarz wpisuje tytuł książki.
+        System sprawdza, czy książka o takim tytule istnieje.
+        Jeśli książka istnieje, system dodaje nowy egzemplarz.
+        System wyświetla komunikat potwierdzający dodanie egzemplarza.
+
+    Scenariusz alternatywny:
+        4a. Jeśli książka nie istnieje, system prosi o jej dodanie (powiązanie z przypadkiem użycia „Dodaj książkę”).
+
+3. Dodaj czytelnika
+
+    Aktor: Bibliotekarz
+    Cel: Dodanie nowego czytelnika do systemu.
+    Scenariusz główny:
+        Bibliotekarz wybiera opcję „Dodaj czytelnika”.
+        System prosi o podanie imienia czytelnika.
+        Bibliotekarz wprowadza imię czytelnika.
+        System dodaje czytelnika do bazy.
+        System wyświetla komunikat potwierdzający dodanie czytelnika.
+
+4. Wypożycz książkę
+
+    Aktor: Bibliotekarz
+
+    Cel: Wypożyczenie egzemplarza książki czytelnikowi.
+
+    Scenariusz główny:
+        Bibliotekarz wybiera opcję „Wypożycz książkę”.
+        System prosi o podanie tytułu książki.
+        Bibliotekarz wprowadza tytuł książki.
+        System sprawdza dostępność egzemplarzy wybranej książki.
+        Jeśli dostępny egzemplarz istnieje, system prosi o podanie imienia czytelnika.
+        Bibliotekarz wprowadza imię czytelnika.
+        System wypożycza egzemplarz książki czytelnikowi i dodaje go do jego listy wypożyczonych książek.
+        System wyświetla komunikat potwierdzający wypożyczenie.
+
+    Scenariusze alternatywne:
+        4a. Jeśli nie ma dostępnych egzemplarzy, system informuje bibliotekarza o braku dostępnych kopii.
+        5a. Jeśli czytelnik nie istnieje, system informuje bibliotekarza o konieczności dodania czytelnika (powiązanie z przypadkiem użycia „Dodaj czytelnika”).
+
+5. Wyświetl książki
+
+    Aktor: Bibliotekarz
+    Cel: Wyświetlenie listy książek dostępnych w bibliotece.
+    Scenariusz główny:
+        Bibliotekarz wybiera opcję „Wyświetl książki”.
+        System wyświetla listę książek wraz z liczbą dostępnych egzemplarzy.
+
+6. Wyświetl czytelników
+
+    Aktor: Bibliotekarz
+    Cel: Wyświetlenie listy zarejestrowanych czytelników.
+    Scenariusz główny:
+        Bibliotekarz wybiera opcję „Wyświetl czytelników”.
+        System wyświetla listę zarejestrowanych czytelników wraz z liczbą wypożyczonych książek.
+
+7. Przeglądaj dostępne książki
+
+    Aktor: Czytelnik
+    Cel: Przeglądanie listy książek w bibliotece.
+    Scenariusz główny:
+        Czytelnik przegląda listę książek dostępnych w systemie.
+        System wyświetla listę książek i liczbę dostępnych egzemplarzy.
+8. Oddaj książki
+    Aktor: Czytelnik
+    Cel: Oddanie książki
+    Scenariusz główny:
+    Czytelnik wybiera opcję „Oddaj książki” w systemie.
+    System prosi czytelnika o podanie tytułu książki, którą chce zwrócić.
+    Czytelnik wprowadza tytuł książki.
+    System prosi czytelnika o podanie swojego imienia.
+    Czytelnik wprowadza swoje imię.
+    System sprawdza, czy książka o podanym tytule jest wypożyczona przez czytelnika o podanym imieniu.
+    Jeśli książka jest wypożyczona przez czytelnika:
+    System oznacza książkę jako zwróconą.
+    System zwiększa liczbę dostępnych egzemplarzy książki.
+    System zapisuje zmiany w bazie danych.
+    System wyświetla komunikat: „Książka [tytuł] została zwrócona przez czytelnika [imię].”
+    Jeśli książka nie jest wypożyczona przez czytelnika:
+    System wyświetla komunikat: „Nie znaleziono wypożyczonego egzemplarza książki [tytuł] przez czytelnika [imię].”
+    Scenariusze alternatywny:
+    6a. Jeśli książka o podanym tytule nie istnieje w systemie:
+    System wyświetla komunikat: „Książka o tytule [tytuł] nie została znaleziona w systemie.”
+    6b. Jeśli czytelnik o podanym imieniu nie istnieje w systemie:
+    System wyświetla komunikat: „Czytelnik o imieniu [imię] nie został znaleziony w systemie.”

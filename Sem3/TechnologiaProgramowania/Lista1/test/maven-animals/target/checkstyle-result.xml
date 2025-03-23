@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="8.29">
+<file name="/home/rafal/Pobrane/TechnologiaProgramowania/Lista1/test/maven-animals/src/main/java/test/animals/App.java">
+</file>
+<file name="/home/rafal/Pobrane/TechnologiaProgramowania/Lista1/test/maven-animals/src/main/java/test/animals/Dog.java">
+</file>
+<file name="/home/rafal/Pobrane/TechnologiaProgramowania/Lista1/test/maven-animals/src/main/java/test/animals/Cat.java">
+</file>
+<file name="/home/rafal/Pobrane/TechnologiaProgramowania/Lista1/test/maven-animals/src/main/java/test/animals/package-info.java">
+</file>
+<file name="/home/rafal/Pobrane/TechnologiaProgramowania/Lista1/test/maven-animals/src/main/java/test/animals/Animal.java">
+</file>
+</checkstyle>

@@ -1,0 +1,58 @@
+@startuml
+package pl.wypozyczalnia {
+
+    class Book {
+        - String title
+        - List<Copy> copies
+        + Book(String title)
+        + String getTitle()
+        + List<Copy> getCopies()
+        + void addCopy(Copy copy)
+        + Copy getAvailableCopy()
+    }
+
+    class Copy {
+        - static int idCounter
+        - int id
+        - boolean borrowed
+        + Copy()
+        + int getId()
+        + boolean isBorrowed()
+        + void borrow()
+        + void returnCopy()
+    }
+
+    class Reader {
+        - String name
+        - List<Copy> borrowedCopies
+        + Reader(String name)
+        + String getName()
+        + List<Copy> getBorrowedCopies()
+        + void borrowCopy(Copy copy)
+        + void returnCopy(Copy copy)
+    }
+
+    class Library {
+        - List<Book> books
+        - List<Reader> readers
+        + Library()
+        + void addBook(String title)
+        + void addCopy(String title)
+        + void addReader(String name)
+        + void borrowBook(String title, String readerName)
+        + void displayBooks()
+        + void displayReaders()
+    }
+
+    class Main {
+        + static void main(String[] args)
+    }
+
+    Book "1" -- "many" Copy : contains
+    Reader "1" -- "many" Copy : borrows
+    Library "1" -- "many" Book : manages
+    Library "1" -- "many" Reader : contains
+    Main ..> Library : uses
+}
+
+@enduml

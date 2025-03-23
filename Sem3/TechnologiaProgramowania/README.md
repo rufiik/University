@@ -1,0 +1,1 @@
+Lista 4,5,6 to projekt chinesecheckers
