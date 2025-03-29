@@ -1,0 +1,254 @@
+// 1. Zmienne (Variables)
+$primary-bg: #404040;
+$text-color: #333;
+$white: #fff;
+$shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+$link-color: #007BFF;
+$link-hover: #013062;
+$spacing-unit: 20px;
+$border-radius: 5px;
+// 2. IF w CSS
+$theme: dark; // light or dark
+// $theme: dark; 
+
+// 3. Domieszki (Mixins)
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin box-shadow($shadow) {
+  box-shadow: $shadow;
+}
+
+@mixin responsive($breakpoint) {
+  @media (min-width: $breakpoint) {
+    @content;
+  }
+}
+
+// 4. Funkcje (Functions)
+@function spacing($multiplier) {
+  @return $spacing-unit * $multiplier;
+}
+
+// 5. Rozszerzenia (Placeholders / Extend)
+%card-style {
+  background: $white;
+  padding: $spacing-unit;
+  border-radius: $border-radius;
+  @include box-shadow($shadow);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+// 6. Operacje Matematyczne
+body {
+  font-family: Arial, sans-serif;
+  line-height: 0.8*2;
+  @if $theme == dark {
+    background-color: #333;
+  } @else {
+    background-color: #fff;
+  }
+  color: $text-color;
+  padding: spacing(1);
+  display: flex;
+  flex-direction: column;
+  min-height: 25*4vh;
+}
+//7. Zagniezdzanie selektorow
+header {
+    @if($theme == dark) {
+      background-color: $white;
+      color: $text-color;
+    } @else {
+      background-color: $primary-bg;
+      color: $white;
+    }
+  padding: 10px 0;
+  text-align: center;
+
+  h1 {
+    margin: 0;
+  }
+}
+
+nav {
+  ul {
+    list-style: none;
+    padding: 0;
+    @include flex-center;
+    flex-wrap: wrap;
+
+    li {
+      margin: 0 10px;
+
+      a {
+        @if($theme == dark) {
+          color: $text-color;
+        } @else {
+          color: $white;
+        }
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+main {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $spacing-unit;
+  margin-top: $spacing-unit;
+}
+
+section, aside {
+  @extend %card-style;
+  text-align: center;
+}
+
+section h2, aside h2 {
+  margin-bottom: 10px;
+}
+
+article {
+  margin-bottom: 10px;
+
+  ul li {
+    list-style: none;
+  }
+}
+
+footer {
+  padding: 10px 0;
+  text-align: center;
+  @if($theme == dark) {
+    background-color: $white;
+    color: $text-color;
+  } @else {
+    background-color: $primary-bg;
+    color: $white;
+  }
+  
+  margin-top: spacing(1.5);
+}
+
+img {
+  margin: 0 auto;
+  border-radius: 80px;
+  max-height: 300px;
+}
+
+.strona {
+  max-height: 200px;
+  border-radius: 0;
+  text-align: center;
+  display: flex;
+  padding: 0;
+  width: 100%;
+  height: auto;
+}
+
+pre {
+  overflow-x: auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+aside {
+  a {
+    &:visited, &:active {
+      color: $link-color;
+    }
+
+    &:hover {
+      color: $link-hover;
+    }
+  }
+}
+
+.projekty {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-unit;
+}
+
+.gallery-image {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  display: block;
+  margin: 0 auto 20px auto;
+  border-radius: 10px;
+  @include box-shadow($shadow);
+}
+
+// Media queries z użyciem mixin
+@include responsive(768px) {
+  .zainteresowania {
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "home about"
+      "home interests"
+      "contact aside";
+  }
+
+  .projekty {
+    grid-template-rows: auto;
+  }
+
+  .strona {
+    max-height: 600px;
+    border-radius: 0;
+    text-align: center;
+    display: flex;
+    padding: $spacing-unit;
+  }
+
+  #home {
+    grid-area: home;
+    text-align: center;
+    @include flex-center;
+  }
+
+  #about {
+    grid-area: about;
+  }
+
+  #interests {
+    grid-area: interests;
+  }
+
+  #contact {
+    grid-area: contact;
+  }
+
+  aside {
+    grid-area: aside;
+  }
+
+  section, aside {
+    padding: $spacing-unit;
+    text-align: left;
+  }
+
+  img {
+    max-height: 500px;
+  }
+
+  article ul li {
+    list-style: disc;
+  }
+  body{
+    padding: spacing(2);
+  }
+}

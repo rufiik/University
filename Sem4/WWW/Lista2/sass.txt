@@ -1,0 +1,2 @@
+sass style.scss styles-dev.css --style=expanded
+sass style.scss styles.css --style=compressed

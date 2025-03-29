@@ -1,0 +1,177 @@
+section, aside {
+  background: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #333;
+  color: #333;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  background-color: #fff;
+  color: #333;
+  padding: 10px 0;
+  text-align: center;
+}
+header h1 {
+  margin: 0;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+nav ul li {
+  margin: 0 10px;
+}
+nav ul li a {
+  color: #333;
+  text-decoration: none;
+}
+
+main {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+section, aside {
+  text-align: center;
+}
+
+section h2, aside h2 {
+  margin-bottom: 10px;
+}
+
+article {
+  margin-bottom: 10px;
+}
+article ul li {
+  list-style: none;
+}
+
+footer {
+  padding: 10px 0;
+  text-align: center;
+  background-color: #fff;
+  color: #333;
+  margin-top: 30px;
+}
+
+img {
+  margin: 0 auto;
+  border-radius: 80px;
+  max-height: 300px;
+}
+
+.strona {
+  max-height: 200px;
+  border-radius: 0;
+  text-align: center;
+  display: flex;
+  padding: 0;
+  width: 100%;
+  height: auto;
+}
+
+pre {
+  overflow-x: auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+aside a:visited, aside a:active {
+  color: #007BFF;
+}
+aside a:hover {
+  color: #013062;
+}
+
+.projekty {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.gallery-image {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  display: block;
+  margin: 0 auto 20px auto;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+@media (min-width: 768px) {
+  .zainteresowania {
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: auto;
+    grid-template-areas: "home about" "home interests" "contact aside";
+  }
+  .projekty {
+    grid-template-rows: auto;
+  }
+  .strona {
+    max-height: 600px;
+    border-radius: 0;
+    text-align: center;
+    display: flex;
+    padding: 20px;
+  }
+  #home {
+    grid-area: home;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #about {
+    grid-area: about;
+  }
+  #interests {
+    grid-area: interests;
+  }
+  #contact {
+    grid-area: contact;
+  }
+  aside {
+    grid-area: aside;
+  }
+  section, aside {
+    padding: 20px;
+    text-align: left;
+  }
+  img {
+    max-height: 500px;
+  }
+  article ul li {
+    list-style: disc;
+  }
+  body {
+    padding: 40px;
+  }
+}
