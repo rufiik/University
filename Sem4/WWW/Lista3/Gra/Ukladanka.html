@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Układanka Obrazkowa</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="menu">
+    <h1>Układanka Obrazkowa</h1>
+    <button id="reset">Resetuj</button>
+    <button id="backToMenu">Wróć do ustawień</button>
+</div>
+    <div id="controls">
+        <label for="image">Wybierz obrazek:</label>
+        <input type="file" id="image" accept="image/*">
+        <label for="rows">Wiersze:</label>
+        <input type="number" id="rows" value="3" min="2">
+        <label for="cols">Kolumny:</label>
+        <input type="number" id="cols" value="3" min="2">
+        <button id="start">Rozpocznij grę</button>
+ 
+
+        <div id="winMessage" style="display: none; margin-top: 20px;">
+            <h2>🎉 Gratulacje! Ułożyłeś układankę!</h2>
+            <button id="playAgain">Zagraj ponownie</button>
+            </div>
+    </div>
+
+    <canvas id="puzzleCanvas"></canvas>
+    <script src="ukladanka.js"></script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+canvas {
+    width: 90vmin;
+    height: 90vmin;
+    max-width: 600px;
+    max-height: 600px;
+    border: 2px solid black;
+    margin-top: 20px;
+}
+
+.highlight {
+    outline: 3px solid yellow;
+}
+#controls {
+    margin: 20px;
+}
+#controls input, #controls button {
+    margin: 5px;
+}
+#menu{
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}

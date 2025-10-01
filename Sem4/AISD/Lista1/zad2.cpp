@@ -68,24 +68,6 @@ void print(const OneWayList& list) {
     } while (temp != list.head);
     std::cout << std::endl;
 }
-
-void clear(OneWayList& list){
-    if (list.head == nullptr) {
-        return;
-    }
-    Node* temp = list.head;
-    Node* temp2 = nullptr;
-    do {
-        temp2 = temp->next;
-        delete temp;
-        temp = temp2;
-    } while (temp != list.head);
-
-    list.head = nullptr;
-    list.size = 0;
-
-}
-
 int main() {
     srand(time(NULL));
     OneWayList list1;
@@ -117,12 +99,13 @@ int main() {
     if(file.is_open()){
     for(int i=0;i<1000;i++){
         number=T[std::rand()%10000];
+        Node* temp = L.head;
         for(int j=0;j<10000;j++){
             counter++;
-            if(number==L.head->data){
+            if(number==temp->data){
                 break;
             }
-            L.head=L.head->next;
+            temp=temp->next;
         }
     file<<counter<<std::endl;
     total_comparisons += counter;
@@ -138,13 +121,14 @@ int main() {
     if(file2.is_open()){
         total_comparisons=0;
         for(int i=0;i<1000;i++){
-            number=std::rand()%1000001;
+            number=std::rand()%100001;
+            Node* temp = L.head;
             for(int j=0;j<10000;j++){
                 counter++;
-                if(number==L.head->data){
+                if(number==temp->data){
                     break;
                 }
-                L.head=L.head->next;
+                temp=temp->next;
             }
             total_comparisons += counter;
             file2<<counter<<std::endl;
@@ -156,9 +140,6 @@ int main() {
     else{
         std::cerr<<"Error: File not opened!"<<std::endl;
     }
-    clear(list1);
-    clear(list2);
-    clear(L);
 
     return 0;
     }

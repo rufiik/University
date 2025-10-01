@@ -1,0 +1,40 @@
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(255) NOT NULL,
+    password VARCHAR(255) NOT NULL
+);
+CREATE TABLE games (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    description TEXT
+);
+CREATE TABLE reviews (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    game_id INT NOT NULL,
+    content TEXT NOT NULL,
+    rating INT CHECK (rating BETWEEN 1 AND 5),
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
+    FOREIGN KEY (game_id) REFERENCES games(id) ON DELETE CASCADE
+);
+INSERT INTO users (username, password) VALUES
+('user1', 'password1'),
+('user2', 'password2'),
+('user3', 'password3');
+INSERT INTO games (title, description) VALUES
+('Game 1', 'Description for Game 1'),
+('Game 2', 'Description for Game 2'),
+('Game 3', 'Description for Game 3');
+INSERT INTO reviews (user_id, game_id, content, rating) VALUES
+(1, 1, 'Amazing game!', 5),
+(2, 1, 'Good game, but could be better.', 4),
+(3, 2, 'Not bad, but not great either.', 3),
+(1, 3, 'Terrible experience.', 1),
+(2, 2, 'Loved it! Highly recommend.', 5),
+(3, 3, 'It was okay, nothing special.', 3),
+(1, 2, 'Great graphics and gameplay.', 4),
+(2, 3, 'Too many bugs, but decent story.', 2),
+(3, 1, 'Fantastic multiplayer mode!', 5),
+(1, 3, 'Could use some improvements.', 3);
+GRANT ALL PRIVILEGES ON API.* TO 'api_user'@'localhost' IDENTIFIED BY 'api_password';
+ALTER TABLE users ADD COLUMN role ENUM('user', 'admin') DEFAULT 'user';

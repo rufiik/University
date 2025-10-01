@@ -71,25 +71,6 @@ void merge(TwoWayList& l1, TwoWayList& l2) {
 
     l1.size += l2.size;
 }
-
-void clear(TwoWayList& list) {
-    if (list.head == nullptr) {
-        return;
-    }
-
-    Node* temp = list.head;
-    Node* temp2 = nullptr;
-
-    do {
-        temp2 = temp->next;
-        delete temp;
-        temp = temp2;
-    } while (temp != list.head);
-
-    list.head = nullptr;
-    list.size = 0;
-}
-
 int main() {
     srand(time(NULL));
     TwoWayList list1;
@@ -145,7 +126,7 @@ int main() {
     if(file2.is_open()) {
         total_comparisons = 0;
         for(int i = 0; i < 1000; i++) {
-            number = std::rand() % 1000001;
+            number = std::rand() % 100001;
             Node* current = L.head;
             bool direction = std::rand() % 2;
             for(int j = 0; j < 10000; j++) {
@@ -164,10 +145,6 @@ int main() {
     } else {
         std::cerr << "Error: File not opened!" << std::endl;
     }
-
-    clear(list1);
-    clear(list2);
-    clear(L);
 
     return 0;
 }

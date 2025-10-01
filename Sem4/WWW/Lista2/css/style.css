@@ -14,7 +14,7 @@ section, aside {
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
-  background-color: #333;
+  background-color: #fff;
   color: #333;
   padding: 20px;
   display: flex;
@@ -23,8 +23,8 @@ body {
 }
 
 header {
-  background-color: #fff;
-  color: #333;
+  background-color: #404040;
+  color: #fff;
   padding: 10px 0;
   text-align: center;
 }
@@ -44,7 +44,7 @@ nav ul li {
   margin: 0 10px;
 }
 nav ul li a {
-  color: #333;
+  color: #fff;
   text-decoration: none;
 }
 
@@ -74,8 +74,8 @@ article ul li {
 footer {
   padding: 10px 0;
   text-align: center;
-  background-color: #fff;
-  color: #333;
+  background-color: #404040;
+  color: #fff;
   margin-top: 30px;
 }
 

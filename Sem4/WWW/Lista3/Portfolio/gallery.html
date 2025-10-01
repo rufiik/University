@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria</title>
+    <link rel="stylesheet" href="style.css">
+  
+</head>
+<body>
+    <header>
+        <h1>Galeria</h1>
+        <!-- Przycisk menu hamburgerowego -->
+        <button class="menu-toggle" aria-label="Otwórz menu">
+            &#9776;
+        </button>
+        <nav>
+            <ul class="menu">
+                <li><a href="index.html">Strona główna</a></li>
+                <li><a href="index.html#about">O mnie</a></li>
+                <li><a href="projects.html">Projekty</a></li>
+                <li><a href="index.html#interests">Zainteresowania</a></li>
+                <li><a href="index.html#contact">Kontakt</a></li>
+                <li><a href="gallery.html">Galeria</a></li>
+            </ul>
+        </nav>
+        <noscript>
+            <nav>
+                <ul class="menu-static">
+                    <li><a href="index.html">Strona główna</a></li>
+                    <li><a href="index.html#about">O mnie</a></li>
+                    <li><a href="projects.html">Projekty</a></li>
+                    <li><a href="index.html#interests">Zainteresowania</a></li>
+                    <li><a href="index.html#contact">Kontakt</a></li>
+                    <li><a href="gallery.html">Galeria</a></li>
+                </ul>
+            </nav>
+        </noscript>
+    </header>
+    <section id="gallery">
+        <h2>Galeria</h2>
+        <div id="gallery-container" class="gallery-container">
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2025 Rafał Wochna 279752. Wszelkie prawa zastrzeżone.</p>
+    </footer>
+    <script src="menu.js"></script>
+    <script src="gallery.js"></script>
+</body>
+</html>
