@@ -1,0 +1,15 @@
+   Początkowe spacje
+Tabulator ->	<- tutaj był tabulator
+Wiele   spacji   między   słowami   
+   
+Linia z samymi spacjami i tabami: 	  	 
+   
+Kilka
+
+pustych
+
+linii
+
+Końcowe spacje i taby    
+Mieszane:  	spacje i taby  	 
+Ostatnia linia bez entera␊

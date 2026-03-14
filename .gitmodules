@@ -1,0 +1,6 @@
+[submodule "Sem5/PZ"]
+	path = Sem5/PZ
+	url = https://github.com/Rafisto/convert-to.git
+[submodule "Sem5/MWO"]
+	path = Sem5/MWO
+	url = https://github.com/Rafisto/mwo.git
