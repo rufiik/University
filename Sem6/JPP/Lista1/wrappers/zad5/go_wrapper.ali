@@ -1,0 +1,40 @@
+V "GNAT Lib v13"
+P ZX
+
+RN
+
+U go_wrapper%s		go_wrapper.ads		263658c3 NE OO PK
+W interfaces%s		interfac.ads		interfac.ali
+
+D go_wrapper.ads	20260323151624 33c1c101 go_wrapper%s
+D interfac.ads		20240521074738 15f799c2 interfaces%s
+D system.ads		20240521074738 426dafb8 system%s
+G a e
+G c Z s s [gcd_go go_wrapper 8 13 none]
+G c Z s s [smallest_prime_divisor_go go_wrapper 9 13 none]
+G c Z s s [euler_totient_go go_wrapper 10 13 none]
+G c Z s s [solve_linear_diophantine_go go_wrapper 12 14 none]
+X 1 go_wrapper.ads
+3K9*Go_Wrapper 18E30 23l5 23e15
+5M12*U64{2|83M9} 8r28 8r40 9r44 9r56 10r35 10r47 13r22 15r26
+6I12*I64{2|56I9}
+8V13*Gcd_Go{5M12} 8>21 8>24 18b<c,GCD>22
+8m21 A{5M12}
+8m24 B{5M12}
+9V13*Smallest_Prime_Divisor_Go{5M12} 9>40 19b<c,SmallestPrimeDivisor>22
+9m40 N{5M12}
+10V13*Euler_Totient_Go{5M12} 10>31 20b<c,EulerTotient>22
+10m31 N{5M12}
+12U14*Solve_Linear_Diophantine_Go 13>7 13>10 13>13 14<7 15<7 15<10 21b<c,SolveLinearDiophantine>22
+13m7 A{5M12}
+13m10 B{5M12}
+13m13 C{5M12}
+14i7 Has_Solution{2|53I9}
+15m7 X{5M12}
+15m10 Y{5M12}
+X 2 interfac.ads
+38K9*Interfaces 1|1w6 1r22 2|232e15
+53I9*Integer_32<integer> 1|14r26
+56I9*Integer_64<long_long_integer> 1|6r19
+83M9*Unsigned_64 1|5r19
+

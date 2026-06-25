@@ -1,0 +1,42 @@
+V "GNAT Lib v13"
+P ZX
+
+RN
+
+U mathlib%s		mathlib.ads		98a6e8e1 NE OO PK
+W interfaces%s		interfac.ads		interfac.ali
+
+D interfac.ads		20240521074738 15f799c2 interfaces%s
+D mathlib.ads		20260323152117 8d517123 mathlib%s
+D system.ads		20240521074738 426dafb8 system%s
+G a e
+G c Z s s [gcd mathlib 8 13 none]
+G c Z s s [smallest_prime_divisor mathlib 9 13 none]
+G c Z s s [euler_totient mathlib 10 13 none]
+G c Z s s [solve_linear_diophantine mathlib 18 13 none]
+G c Z s s [diophantine_solutionIP mathlib 12 9 none]
+X 1 interfac.ads
+38K9*Interfaces 232e15 2|1w6 1r22
+53I9*Integer_32<integer> 2|13r22
+56I9*Integer_64<long_long_integer> 2|6r19
+83M9*Unsigned_64 2|5r19
+X 2 mathlib.ads
+3K9*Mathlib 21E27 26l5 26e12
+5M12*U64{1|83M9} 8r25 8r37 9r41 9r53 10r32 10r44 14r22 18r49
+6I12*I64{1|56I9}
+8V13*Gcd{5M12} 8>18 8>21 21b<c,gcd>22
+8m18 A{5M12}
+8m21 B{5M12}
+9V13*Smallest_Prime_Divisor{5M12} 9>37 22b<c,smallest_prime_divisor>22
+9m37 N{5M12}
+10V13*Euler_Totient{5M12} 10>28 23b<c,euler_totient>22
+10m28 N{5M12}
+12R9*Diophantine_Solution 15e14 16r26 18r61
+13i7*Has_Solution{1|53I9}
+14m7*X{5M12}
+14m10*Y{5M12}
+18V13*Solve_Linear_Diophantine{12R9} 18>39 18>42 18>45 24b<c,solve_linear_diophantine>22
+18m39 A{5M12}
+18m42 B{5M12}
+18m45 C{5M12}
+

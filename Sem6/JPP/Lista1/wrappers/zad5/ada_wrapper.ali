@@ -1,0 +1,64 @@
+V "GNAT Lib v13"
+P ZX
+
+RN
+
+U ada_wrapper%b		ada_wrapper.adb		d4ff8d02 NE OO PK
+W mathlib%s		mathlib.ads		mathlib.ali
+
+U ada_wrapper%s		ada_wrapper.ads		c5e6da50 EE NE OO PK
+W interfaces%s		interfac.ads		interfac.ali
+
+D ada_wrapper.ads	20260323151707 d0114392 ada_wrapper%s
+D ada_wrapper.adb	20260323153003 89bfbfb3 ada_wrapper%b
+D interfac.ads		20240521074738 15f799c2 interfaces%s
+D mathlib.ads		20260323152117 8d517123 mathlib%s
+D system.ads		20240521074738 426dafb8 system%s
+G a e
+G c Z s b [gcd_ada ada_wrapper 8 13 none]
+G c Z s b [smallest_prime_divisor_ada ada_wrapper 9 13 none]
+G c Z s b [euler_totient_ada ada_wrapper 10 13 none]
+G c Z s b [solve_linear_diophantine_ada ada_wrapper 17 13 none]
+G c Z s s [diophantine_solution_adaIP ada_wrapper 12 9 none]
+G r c none [gcd_ada ada_wrapper 8 13 none] [gcd mathlib 8 13 none]
+G r c none [smallest_prime_divisor_ada ada_wrapper 9 13 none] [smallest_prime_divisor mathlib 9 13 none]
+G r c none [euler_totient_ada ada_wrapper 10 13 none] [euler_totient mathlib 10 13 none]
+G r c none [solve_linear_diophantine_ada ada_wrapper 17 13 none] [solve_linear_diophantine mathlib 18 13 none]
+X 1 ada_wrapper.ads
+3K9*Ada_Wrapper 20l5 20e16 2|3b14 33l5 33t16
+5M12*U64{3|83M9} 8r29 8r41 9r45 9r57 10r36 10r48 14r22 18r17 2|5r29 5r41
+. 10r45 10r57 15r36 15r48 21r17
+6I12*I64{3|56I9}
+8V13*Gcd_Ada{5M12} 8>22 8>25 2|5b13 8l8 8t15
+8m22 A{5M12} 2|5b22 7r27
+8m25 B{5M12} 2|5b25 7r30
+9V13*Smallest_Prime_Divisor_Ada{5M12} 9>41 2|10b13 13l8 13t34
+9m41 N{5M12} 2|10b41 12r46
+10V13*Euler_Totient_Ada{5M12} 10>32 2|15b13 18l8 18t25
+10m32 N{5M12} 2|15b32 17r37
+12R9*Diophantine_Solution_Ada 15e14 18r29 2|21r29
+13b7*Has_Solution{boolean} 2|27m10
+14m7*X{5M12} 2|28m10
+14m10*Y{5M12} 2|29m10
+17V13*Solve_Linear_Diophantine_Ada{12R9} 18>7 18>10 18>13 2|20b13 31l8 31t36
+18m7 A{5M12} 2|21b7 25r53
+18m10 B{5M12} 2|21b10 25r56
+18m13 C{5M12} 2|21b13 25r59
+X 2 ada_wrapper.adb
+23r7 Solution{4|12R9} 25m7 27r26 28r26 29r26
+X 3 interfac.ads
+38K9*Interfaces 1|1w6 1r22 3|232e15
+53I9*Integer_32<integer>
+56I9*Integer_64<long_long_integer> 1|6r19
+83M9*Unsigned_64 1|5r19
+X 4 mathlib.ads
+3K9*Mathlib 2|1w6 7r14 12r14 17r14 23r18 25r19 4|26e12
+8V13*Gcd{5M12} 2|7s22
+9V13*Smallest_Prime_Divisor{5M12} 2|12s22
+10V13*Euler_Totient{5M12} 2|17s22
+12R9*Diophantine_Solution 2|23r26 4|15e14
+13i7*Has_Solution{3|53I9} 2|27r35
+14m7*X{5M12} 2|28r35
+14m10*Y{5M12} 2|29r35
+18V13*Solve_Linear_Diophantine{12R9} 2|25s27
+
